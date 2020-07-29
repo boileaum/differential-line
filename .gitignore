@@ -11,7 +11,7 @@ src/*.html
 *.so
 profile/*
 .env/
-vertical/
+output/
 .DS_Store
 differential_line.egg-info/
 *.egg

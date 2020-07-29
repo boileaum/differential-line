@@ -14,13 +14,13 @@ STP = ONE*0.02
 NEARL = 15*ONE
 FARL = 0.235
 
-PROCS = 6
+PROCS = 8
 
 MID = 0.5
 
 LINEWIDTH = 5.*ONE
 
-INIT_NUM = 7
+INIT_NUM = 5
 
 BACK = [1, 1, 1, 1]
 FRONT = [0, 0, 0, 0.08]
@@ -52,8 +52,8 @@ def main():
     render.ctx.set_source_rgba(*FRONT)
     render.ctx.set_line_width(LINEWIDTH)
 
-    # angles = sorted(random(INIT_NUM)*TWOPI)
-    # DF.init_circle_segment(MID,MID,0.2, angles)
+    angles = sorted(random(INIT_NUM)*TWOPI)
+    DF.init_circle_segment(MID, MID, 0.025, angles)
 
     # arc
 
@@ -78,13 +78,13 @@ def main():
 
     # diagonal line
 
-    yy = sorted(MID + 0.2*(1-2*random(INIT_NUM)))
-    xx = sorted(MID + 0.2*(1-2*random(INIT_NUM)))
-    xys = []
-    for x, y in zip(xx, yy):
-        xys.append((x, y))
+    # yy = sorted(MID + 0.2*(1-2*random(INIT_NUM)))
+    # xx = sorted(MID + 0.2*(1-2*random(INIT_NUM)))
+    # xys = []
+    # for x, y in zip(xx, yy):
+    #     xys.append((x, y))
 
-    DF.init_line_segment(xys, lock_edges=1)
+    # DF.init_line_segment(xys, lock_edges=1)
 
     for i in count():
 
@@ -93,7 +93,7 @@ def main():
         DF.optimize_position(STP)
         spawn_curl(DF, NEARL, 0.016)
 
-        if i % 100 == 0:
+        if i % 500 == 0:
             fn = './res/chris_bd_{:04d}.png'.format(i)
         else:
             fn = None

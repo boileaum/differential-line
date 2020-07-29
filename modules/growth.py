@@ -37,7 +37,7 @@ def spawn_curl(df, limit, prob_spawn=1.0):
       pass
 
   ne = len(ind_curv)
-  for r,(e,t) in zip(random(ne),iter(ind_curv.items())):
+  for r,(e,t) in zip(random(ne),iter(list(ind_curv.items()))):
 
     if r<t/max_curv*prob_spawn:
     #if t>2*limit or r<t/max_curv:

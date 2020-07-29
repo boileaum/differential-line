@@ -10,3 +10,7 @@ src/*.c
 src/*.html
 *.so
 profile/*
+.env/
+vertical/
+.DS_Store
+differential_line.egg-info/

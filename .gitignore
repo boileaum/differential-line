@@ -14,3 +14,4 @@ profile/*
 vertical/
 .DS_Store
 differential_line.egg-info/
+*.egg
